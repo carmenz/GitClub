@@ -96,11 +96,11 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid $gray-darker;
-  background-color: white;
-  color: black;
+  color: #fff;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  letter-spacing: 1px;
   a {
-    color: black;
-    background-color: white;
+    color: white;
     &:hover {
       color: navy;
     }
@@ -108,12 +108,11 @@ footer {
   small {
     float: left;
     padding: 0px 3px;
-    background-color: white;
+    
   }
   ul {
     float: right;
     list-style: none;
-    background-color: white;
     padding-left: 0px;
     li {
       float: left;
