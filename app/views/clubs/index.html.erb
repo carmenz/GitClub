@@ -26,12 +26,12 @@
                           <ul>
                              <li class='has-sub'><a href='#'>by Alphabetical Order</a>
                                 <ul>
-                                   <li><a href='#'>Ascending </a>
+                                   <li><a href='A'>A </a>
                                       
                                    
                                    </li>
                                    
-                                   <li class='last'><a href='#'>Descending</a></li>
+                                   <li class='last'><a href='#'>B</a></li>
                                 </ul>
                              </li>
                              <li class='has-sub'><a href='#'>by Genre</a>
@@ -77,6 +77,7 @@
                 <% cur_letter = nil %>
                 <% @sortA.each do |t| %>
                 <% title_letter = t.name[0].capitalize.match(/[A-Z]/) ? t.name[0].capitalize : "#" %> 
+                
                 <% if title_letter != cur_letter %>
                 <% cur_letter = title_letter %>
                 <p style="color:#FF43FF"><%= cur_letter %>:</p>
@@ -90,6 +91,34 @@
                         <br>description: 
                         <%= t.description %>
                     </div>
+                <% end %> 
+                
+                
+                
+                
+                
+                <!-- This is for the sort by letter funciton put the letter to be sorted in the 'A' spot of "if title_letter ==" -->
+                <% cur_letter = nil %>
+                <% @sortA.each do |t| %>
+                <% title_letter = t.name[0].capitalize.match(/[A-Z]/) ? t.name[0].capitalize : "#" %> 
+                
+                <% if title_letter == 'A' %>
+                <% if title_letter != cur_letter %>
+                <% cur_letter = title_letter %>
+                <p style="color:#FF43FF"><%= cur_letter %>:</p>
+                <% end %>
+                
+                <div class= "clubindex">
+                        <%= gravatar_forc t, size: 120 %>
+                        <h3>
+                            <%= link_to t.name, build_club_path(t) %>
+                        </h3>genre: 
+                        <%= t.genre %>
+                        <br>description: 
+                        <%= t.description %>
+                </div>
+                
+                <% end %> 
                 <% end %> 
     		</article>
     		
