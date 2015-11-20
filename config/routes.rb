@@ -51,6 +51,7 @@ Rails.application.routes.draw do
   get 'p/:path/newpost' => 'posts#new', as: :new_club_post
   get 'p/:path/:post_id' => 'posts#show', as: :view_club_post
 
+
   
 
 

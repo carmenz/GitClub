@@ -2,6 +2,7 @@ class ClubsController < ApplicationController
     before_action :logged_in_user, only: [:create, :new]
     before_action :find_club_path, only: [:show, :manage]
     #before_action :show_all_clubs,     only: :index
+    helper_method :ascending
     
     def index
         #@clubs = Club.all
@@ -13,6 +14,8 @@ class ClubsController < ApplicationController
         else
             @clubs = Club.all.paginate(page: params[:page], :per_page => 10)
         end
+        
+         @sortA = Club.order(:name)
     end
 
     def new 
@@ -51,6 +54,7 @@ class ClubsController < ApplicationController
     def find_club_path
         @club = Club.by_path(params[:path])
     end
+    
     
 
 end

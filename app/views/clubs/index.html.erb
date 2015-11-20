@@ -26,7 +26,11 @@
                           <ul>
                              <li class='has-sub'><a href='#'>by Alphabetical Order</a>
                                 <ul>
-                                   <li><a href='#'>Ascending</a></li>
+                                   <li><a href='#'>Ascending </a>
+                                      
+                                   
+                                   </li>
+                                   
                                    <li class='last'><a href='#'>Descending</a></li>
                                 </ul>
                              </li>
@@ -54,21 +58,39 @@
                 <% else %>
                     <p>There are no results found.</p>
                 <% end %>
-    
-                <% @clubs.each do |club| %>
-                    <% @club = club %>
+                <!--    
+                <%-# @clubs.each do |club| -%>
+                    <%-# @club = club -%>
                     <div class= "clubindex">
-                        <%= gravatar_forc club, size: 120 %>
+                        <%-#= gravatar_forc club, size: 120 -%>
                         <h3>
-                            <%= link_to club.name, build_club_path(club) %>
-                        </h3>
-                        <%= club.genre %>
-                        <br>
-                        <%= club.description %>
+                            <%-#= link_to club.name, build_club_path(club) -%>
+                        </h3>genre: 
+                        <%-#= club.genre -%>
+                        <br>description: 
+                        <%-#= club.description -%>
                     </div>
-                <% end %>
+                <%-# end -%>
+                -->
                 <%= will_paginate @clubs %>
     
+                <% cur_letter = nil %>
+                <% @sortA.each do |t| %>
+                <% title_letter = t.name[0].capitalize.match(/[A-Z]/) ? t.name[0].capitalize : "#" %> 
+                <% if title_letter != cur_letter %>
+                <% cur_letter = title_letter %>
+                <p style="color:#FF43FF"><%= cur_letter %>:</p>
+                <% end %>
+                <div class= "clubindex">
+                        <%= gravatar_forc t, size: 120 %>
+                        <h3>
+                            <%= link_to t.name, build_club_path(t) %>
+                        </h3>genre: 
+                        <%= t.genre %>
+                        <br>description: 
+                        <%= t.description %>
+                    </div>
+                <% end %> 
     		</article>
     		
 		</section>
