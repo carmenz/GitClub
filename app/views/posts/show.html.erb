@@ -7,9 +7,9 @@
 
 <!-- render content of the post -->
 <%= render 'show' %>
-
 <% if logged_in? %>
     <%= render 'comments/form' %>
+    
 <% end %>
 
 <!-- renders all the comments in the current post -->

@@ -13,6 +13,7 @@ gem 'grabbit', '~> 1.0'
 gem 'jquery-turbolinks', '~> 2.1'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'ancestry'
+gem 'acts-as-taggable-on'
 
 gem 'bootstrap-will_paginate', '0.0.10'
 gem 'bootstrap-sass',          '3.2.0.0'
@@ -23,6 +24,7 @@ gem 'jquery-rails',            '4.0.3'
 gem 'turbolinks',              '2.3.0'
 gem 'jbuilder',                '2.2.3'
 gem 'sdoc',                    '0.4.0', group: :doc
+
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'

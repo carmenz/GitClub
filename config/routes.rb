@@ -62,6 +62,11 @@ Rails.application.routes.draw do
   get 'p/:path/manage/members' => 'clubs#show_members', as: :manage_club_members
   get 'p/:path/manage/manage_requests' => 'clubs#manage_requests', as: :manage_requests
 
+
+  Rails.application.routes.draw do
+    resources :posts
+    resources :tags, only: [:index, :show]
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

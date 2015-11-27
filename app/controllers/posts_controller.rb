@@ -13,6 +13,7 @@ class PostsController < ApplicationController
     
     def create
         @post = Post.new(post_params)
+        @post = Post.create(post_params)
         @club = Club.by_path(params[:club_path]) if params[:club_path]
         if @club.nil?
             flash[:danger] = 'ERROR: Could not find the specificed club'
@@ -60,7 +61,7 @@ class PostsController < ApplicationController
     private
     
     def post_params
-        params.require(:post).permit(:context, :title, :url, :club_id, :image, :picture)
+        params.require(:post).permit(:context, :title, :url, :club_id, :image, :picture, :tag_list)
     end
     
     def authorized_member?
