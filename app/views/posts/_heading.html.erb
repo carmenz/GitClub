@@ -1,5 +1,4 @@
-
-        <% if @post.picture?  %>
+<% if @post.picture?  %>
           <%= link_to (image_tag @post.picture), @post.url %>
         <% else %>
           <% if @post.image?  %>
@@ -44,6 +43,4 @@
               <span class="glyphicon glyphicon-heart"></span>
               <%= @post.get_upvotes.size %>
             </div>
-
         </div>
- 
